@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog de Ofertas - Produtos e Cupons</title>
+  <meta name="description" content="As melhores ofertas e cupons do Mercado Livre. Confira produtos selecionados com descontos e links de afiliados!" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+    body {
+      background: var(--bg);
+      color: var(--text);
+      --bg: #ffffff;
+      --text: #222;
+      --card: #fff;
+      --shadow: rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    body.dark {
+      --bg: #0d0d0d;
+      --text: #eee;
+      --card: #1a1a1a;
+      --shadow: rgba(255,255,255,0.1);
+    }
+
+    header {
+      background: linear-gradient(90deg, #007bff, #00bcd4);
+      color: #fff;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      background: var(--card);
+      box-shadow: 0 2px 5px var(--shadow);
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      color: var(--text);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover { color: #007bff; }
+
+    .filtros {
+      max-width: 1200px;
+      margin: 20px auto 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+    .filtros input, .filtros select {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 0.95em;
+      background: var(--card);
+      color: var(--text);
+    }
+
+    .contador {
+      text-align: center;
+      font-size: 1em;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 15px;
+      box-shadow: 0 3px 10px var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-5px); }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      background: #f9f9f9;
+      display: block;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card-content h3 {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+    .card-content p {
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+    .btn {
+      display: inline-block;
+      background: #007bff;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .btn:hover { background: #0056b3; }
+
+    .paginacao {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .paginacao button {
+      background: #007bff;
+      color: white;
+      border: none;
+      margin: 3px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .paginacao button.active {
+      background: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--card);
+      box-shadow: 0 -2px 5px var(--shadow);
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+      display: none;
+      cursor: pointer;
+      box-shadow: 0 3px 10px var(--shadow);
+    }
+
+    #themeToggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #007bff;
+      border: none;
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    /* === Loader === */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #ccc;
+      border-top: 6px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    .loader-text {
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #007bff;
+      font-weight: 600;
+      opacity: 0;
+      animation: fade 1.5s ease-in-out infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes fade {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loader com texto -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="loader-text">💫 Carregando ofertas...</div>
+  </div>
+
+  <header>💻 Home Tech - Ofertas Acessíveis</header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Ofertas</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <button id="themeToggle">🌙</button>
+
+  <div class="filtros">
+    <input type="text" id="busca" placeholder="Buscar produto..." />
+    <select id="categoria">
+      <option value="todas">Todas as categorias</option>
+      <option value="notebooks">Notebooks</option>
+      <option value="smartphones">Smartphones</option>
+      <option value="perifericos">Periféricos</option>
+      <option value="games">Video Games</option>
+      <option value="moda">Moda e Fitness</option>
+      <option value="casa">Casa e Móveis</option>
+      <option value="eletro">Eletrodomésticos</option>
+    </select>
+  </div>
+
+  <div class="contador" id="contador">Produtos encontrados: 0</div>
+
+  <section class="container" id="produtos"></section>
+  <div class="paginacao" id="paginacao"></div>
+
+  <button id="topBtn">↑</button>
+
+  <footer>
+    <p>© 2025 Ofertas Acessíveis - Desenvolvido por Paulo Carvalho</p>
+  </footer>
+
+  <script>
+    const produtosData = [
+      { nome: "Notebook Lenovo Ideapad 3i 15\"", categoria: "notebooks", descricao: "Notebook rápido e eficiente para o dia a dia.", imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_754437-MLA96115801247_102025-F.webp", link: "https://mercadolivre.com/sec/1VqwTvV" },
+      { nome: "Smartphone Samsung Galaxy A05s 128GB", categoria: "smartphones", descricao: "Smartphone com ótimo custo-benefício.", imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_994900-MLA95712550162_102025-F.webp", link: "https://mercadolivre.com/sec/28mu5Xt" },
+      { nome: "Mouse Gamer M711 Cobra Chroma", categoria: "perifericos", descricao: "Iluminação RGB e alta precisão para games intensos.", imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_814113-MLA91552015722_092025-F.webp", link: "https://mercadolivre.com/sec/2ffPU6w" },
+      { nome: "Teclado Mecânico Redragon Kumara", categoria: "perifericos", descricao: "Teclado mecânico ABNT2 com iluminação RGB.", imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_772384-MLA45742244298_042021-F.webp", link: "https://mercadolivre.com/sec/3abc123" },
+      { nome: "Geladeira Frost Free 375L", categoria: "eletro", descricao: "Geladeira prática e econômica.", imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_611947-MLA45698765432_052021-F.webp", link: "https://mercadolivre.com/sec/4def456" },
+      { nome: "Cadeira Gamer Reclinável", categoria: "casa", descricao: "Conforto e estilo para longas horas de uso.", imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_725111-MLA48098765432_092021-F.webp", link: "https://mercadolivre.com/sec/5ghi789" },
+      { nome: "PlayStation 5 + Controle Extra", categoria: "games", descricao: "Desempenho incrível e gráficos de última geração.", imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_987654-MLA48012345678_092021-F.webp", link: "https://mercadolivre.com/sec/6jkl012" },
+      { nome: "Smartwatch FitPulse 2", categoria: "moda", descricao: "Acompanhe sua saúde com estilo e tecnologia.", imagem: "https://http2.mlstatic.com/D_NQ_NP_2X_123456-MLA48098712345_082021-F.webp", link: "https://mercadolivre.com/sec/7mno345" }
+    ];
+
+    function embaralhar(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    const produtosContainer = document.getElementById("produtos");
+    const contador = document.getElementById("contador");
+    const paginacao = document.getElementById("paginacao");
+    const buscaInput = document.getElementById("busca");
+    const filtroCat = document.getElementById("categoria");
+    const loader = document.getElementById("loader");
+
+    let produtosFiltrados = [];
+    let paginaAtual = 1;
+    const itensPorPagina = 6;
+
+    function renderizarProdutos() {
+      produtosContainer.innerHTML = "";
+      const inicio = (paginaAtual - 1) * itensPorPagina;
+      const fim = inicio + itensPorPagina;
+      const produtosPagina = produtosFiltrados.slice(inicio, fim);
+
+      produtosPagina.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img src="${p.imagem}" alt="${p.nome}">
+          <div class="card-content">
+            <h3>${p.nome}</h3>
+            <p>${p.descricao}</p>
+            <a href="${p.link}" target="_blank" class="btn">Ver no Mercado Livre</a>
+          </div>
+        `;
+        produtosContainer.appendChild(card);
+      });
+
+      contador.textContent = `Produtos encontrados: ${produtosFiltrados.length}`;
+      renderizarPaginacao();
+    }
+
+    function renderizarPaginacao() {
+      paginacao.innerHTML = "";
+      const totalPaginas = Math.ceil(produtosFiltrados.length / itensPorPagina);
+      for (let i = 1; i <= totalPaginas; i++) {
+        const btn = document.createElement("button");
+        btn.textContent = i;
+        if (i === paginaAtual) btn.classList.add("active");
+        btn.onclick = () => {
+          paginaAtual = i;
+          renderizarProdutos();
+        };
+        paginacao.appendChild(btn);
+      }
+    }
+
+    function filtrarProdutos() {
+      const termo = buscaInput.value.toLowerCase();
+      const categoria = filtroCat.value;
+      produtosFiltrados = produtosData.filter(p => {
+        const matchBusca = p.nome.toLowerCase().includes(termo);
+        const matchCat = categoria === "todas" || p.categoria === categoria;
+        return matchBusca && matchCat;
+      });
+      paginaAtual = 1;
+      renderizarProdutos();
+    }
+
+    // Mostra loader durante embaralhamento
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        embaralhar(produtosData);
+        produtosFiltrados = produtosData;
+        renderizarProdutos();
+        loader.style.display = "none";
+      }, 1500);
+    });
+
+    buscaInput.addEventListener("input", filtrarProdutos);
+    filtroCat.addEventListener("change", filtrarProdutos);
+
+    // Tema escuro
+    const toggle = document.getElementById("themeToggle");
+    toggle.onclick = () => {
+      document.body.classList.toggle("dark");
+      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    };
+
+    // Botão voltar ao topo
+    const btnTop = document.getElementById("topBtn");
+    window.onscroll = function() {
+      btnTop.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+    };
+    btnTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  </script>
+</body>
+</html>
