@@ -556,6 +556,22 @@
         min-height: 176px;
       }
     }
+
+
+    /* ===== Home Tech 2.0 ===== */
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.hero-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:800;background:#fff;color:#123}.hero-btn.secondary{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(8px)}
+    .quick-wrap,.featured-wrap,.coupon-wrap{max-width:1200px;margin:18px auto 0;padding:0 18px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:10px}.section-head h2{font-size:1.25rem}.section-head p{color:var(--muted);font-size:.9rem}
+    .quick-cats{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.quick-cats::-webkit-scrollbar{display:none}.cat-chip{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:999px;padding:10px 14px;font-weight:800;cursor:pointer}.cat-chip.active,.cat-chip:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+    .featured{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(245px,300px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 8px}.featured .card{scroll-snap-align:start}
+    .coupon-box{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(135deg,var(--surface),var(--surface-strong));box-shadow:0 10px 24px rgba(23,32,51,.06)}.coupon-box h2{font-size:1.15rem;margin-bottom:4px}.coupon-box p{color:var(--muted)}
+    .toolbar{max-width:1200px;margin:12px auto 0;padding:0 18px;display:flex;justify-content:space-between;align-items:center;gap:12px}.sort-select{min-height:42px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--text);padding:0 12px;font-weight:700}
+    .card{position:relative}.badge{position:absolute;top:10px;left:10px;z-index:2;padding:6px 9px;border-radius:999px;background:#00a650;color:#fff;font-size:.75rem;font-weight:900;box-shadow:0 5px 14px rgba(0,0,0,.16)}.fav-btn{position:absolute;top:9px;right:9px;z-index:2;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.94);cursor:pointer;font-size:1rem}.fav-btn.active{color:#e11d48}
+    .price-box{margin-top:2px}.old-price{color:var(--muted);font-size:.82rem;text-decoration:line-through;min-height:1em}.current-price{font-size:1.35rem;font-weight:900;color:var(--text)}.installments{font-size:.82rem!important;color:#00a650!important;font-weight:800}.card-actions{display:grid;grid-template-columns:1fr 44px;gap:8px;margin-top:auto}.card-actions .btn{margin-top:0}.share-btn{border:1px solid var(--line);border-radius:8px;background:var(--surface-strong);color:var(--text);cursor:pointer;font-size:1rem}
+    .admin-fab{position:fixed;left:18px;bottom:18px;z-index:901;border:0;border-radius:999px;background:#172033;color:#fff;min-height:46px;padding:0 16px;font-weight:900;cursor:pointer;box-shadow:var(--shadow)}body.dark .admin-fab{background:#f4f7fb;color:#172033}
+    .modal-backdrop{position:fixed;inset:0;z-index:2000;background:rgba(5,10,20,.62);display:none;align-items:center;justify-content:center;padding:16px}.modal-backdrop.open{display:flex}.admin-modal{width:min(760px,100%);max-height:92vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.35)}.modal-head{position:sticky;top:0;background:var(--surface);display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--line);z-index:2}.modal-head button{width:38px;height:38px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);cursor:pointer}.admin-body{padding:16px}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-grid .full{grid-column:1/-1}.admin-grid input,.admin-grid select,.admin-grid textarea{width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}.admin-grid textarea{min-height:80px;resize:vertical}.admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.admin-actions button{min-height:42px;border:0;border-radius:8px;padding:0 14px;font-weight:900;cursor:pointer}.save-product{background:var(--brand);color:#fff}.cancel-edit{background:var(--surface-strong);color:var(--text)}.admin-list{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}.admin-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.admin-item span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.admin-item-actions{display:flex;gap:6px}.admin-item button{border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:7px;padding:7px 9px;cursor:pointer}.danger{color:#dc2626!important}
+    .toast{position:fixed;left:50%;bottom:76px;transform:translate(-50%,20px);z-index:3000;background:#172033;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;opacity:0;pointer-events:none;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:768px){.quick-wrap,.featured-wrap,.coupon-wrap,.toolbar{padding-left:12px;padding-right:12px}.coupon-box{align-items:flex-start;flex-direction:column}.toolbar{align-items:stretch;flex-direction:column}.sort-select{width:100%}.admin-grid{grid-template-columns:1fr}.admin-grid .full{grid-column:auto}.admin-fab{left:12px;bottom:14px;padding:0 13px}.card-actions{grid-template-columns:1fr 40px}.current-price{font-size:1.12rem}.featured{grid-auto-columns:82vw}}
+
   </style>
 </head>
 <body>
@@ -584,11 +600,22 @@
       <img src="img/banner.jpg" alt="Produtos de tecnologia em oferta" />
       <div class="banner-copy">
         <h1>Ofertas acessíveis</h1>
-        <p>Produtos selecionados, cupons e achadinhos de tecnologia com acesso rápido ao Mercado Livre.</p>
+        <p>Produtos selecionados, cupons e achadinhos de tecnologia com acesso rápido ao Mercado Livre.</p><div class="hero-actions"><a class="hero-btn" href="#produtos">🔥 Ver ofertas</a><a class="hero-btn secondary" href="https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header" target="_blank" rel="noopener noreferrer">🎟️ Ver cupons</a></div>
       </div>
     </div>
   </section>
 
+  <section class="quick-wrap" aria-label="Categorias rápidas">
+    <div class="section-head"><div><h2>Explore por categoria</h2><p>Encontre ofertas mais rápido</p></div></div>
+    <div class="quick-cats" id="quickCats"></div>
+  </section>
+  <section class="featured-wrap" id="featuredSection">
+    <div class="section-head"><div><h2>🔥 Ofertas em destaque</h2><p>Seleção rápida da Home Tech</p></div></div>
+    <div class="featured" id="featured"></div>
+  </section>
+  <section class="coupon-wrap">
+    <div class="coupon-box"><div><h2>🎟️ Cupons Mercado Livre</h2><p>Confira cupons disponíveis antes de finalizar sua compra.</p></div><a class="btn" href="https://www.mercadolivre.com.br/cupons?source_page=mperfil#nav-header" target="_blank" rel="noopener noreferrer">Ver cupons</a></div>
+  </section>
   <div class="filters-wrap">
     <div class="filtros" aria-label="Filtros de produtos">
       <input type="search" id="busca" placeholder="Buscar produto..." autocomplete="off" />
@@ -608,13 +635,16 @@
     </div>
   </div>
 
-  <div class="contador" id="contador">Produtos encontrados: 0</div>
+  <div class="toolbar"><div class="contador" id="contador">Produtos encontrados: 0</div><select id="ordenacao" class="sort-select" aria-label="Ordenar produtos"><option value="padrao">Ordenar: Destaques</option><option value="menor">Menor preço</option><option value="maior">Maior preço</option><option value="desconto">Maior desconto</option><option value="az">Nome A–Z</option></select></div>
 
   <section class="container" id="produtos"></section>
   <div class="paginacao" id="paginacao"></div>
 
   <button id="topBtn">↑</button>
 
+<button class="admin-fab" id="adminBtn" type="button">⚙️ Gerenciar ofertas</button>
+<div class="modal-backdrop" id="adminModal" aria-hidden="true"><div class="admin-modal" role="dialog" aria-modal="true" aria-labelledby="adminTitle"><div class="modal-head"><h2 id="adminTitle">Gerenciar ofertas</h2><button id="closeAdmin" aria-label="Fechar">✕</button></div><div class="admin-body"><form id="productForm"><div class="admin-grid"><input id="pNome" class="full" required placeholder="Nome do produto"><select id="pCategoria" required><option value="notebooks">Notebooks</option><option value="smartphones">Smartphones</option><option value="camera">Câmeras</option><option value="tv">TVs</option><option value="perifericos">Periféricos</option><option value="games">Video games</option><option value="moda">Moda e fitness</option><option value="perfume">Perfumes</option><option value="casa">Casa e móveis</option><option value="eletro">Eletrodomésticos</option></select><input id="pPrecoAntigo" inputmode="decimal" placeholder="Preço antigo (ex.: 2499,90)"><input id="pPreco" inputmode="decimal" placeholder="Preço atual (ex.: 1999,90)"><input id="pImagem" class="full" required placeholder="URL da imagem"><input id="pLink" class="full" required placeholder="Link de afiliado"><textarea id="pDescricao" class="full" placeholder="Descrição"></textarea><label class="full"><input id="pDestaque" type="checkbox"> Marcar como destaque</label></div><div class="admin-actions"><button class="save-product" type="submit">💾 Salvar oferta</button><button class="cancel-edit" id="cancelEdit" type="button" hidden>Cancelar edição</button></div></form><div class="admin-list"><h3>Produtos cadastrados</h3><div id="adminProducts"></div></div></div></div></div>
+<div class="toast" id="toast"></div>
 <footer>
     <div class="footer-inner">
       <p>Ofertas Acessíveis - Desenvolvido por Paulo Carvalho © 2026</p>
@@ -953,122 +983,40 @@
 ]
 
 
-    function embaralhar(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
+    function embaralhar(array) { for (let i=array.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[array[i],array[j]]=[array[j],array[i]]} return array; }
+    const STORAGE_PRODUCTS="homeTechProdutosV2", STORAGE_FAV="homeTechFavoritosV2";
+    const baseProdutos=produtosData.map((p,i)=>({...p,id:`base-${i}`,preco:p.preco||0,precoAntigo:p.precoAntigo||0,destaque:i<6}));
+    let customProdutos=JSON.parse(localStorage.getItem(STORAGE_PRODUCTS)||"[]");
+    let favoritos=new Set(JSON.parse(localStorage.getItem(STORAGE_FAV)||"[]"));
+    let todosProdutos=[...customProdutos,...baseProdutos], produtosFiltrados=[], paginaAtual=1; const itensPorPagina=6;
+    const $=id=>document.getElementById(id), produtosContainer=$("produtos"),contador=$("contador"),paginacao=$("paginacao"),buscaInput=$("busca"),filtroCat=$("categoria"),ordenacao=$("ordenacao");
+    const brl=v=>Number(v)>0?Number(v).toLocaleString("pt-BR",{style:"currency",currency:"BRL"}):"";
+    const norm=t=>(t||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+    function desconto(p){return p.precoAntigo>p.preco&&p.preco>0?Math.round((1-p.preco/p.precoAntigo)*100):0}
+    function toast(msg){const t=$("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove("show"),1800)}
+    function cardHTML(p){const d=desconto(p), fav=favoritos.has(p.id);return `${d?`<span class="badge">-${d}% OFF</span>`:""}<button class="fav-btn ${fav?"active":""}" data-fav="${p.id}" aria-label="Favoritar">${fav?"♥":"♡"}</button><img src="${p.imagem}" alt="${p.nome}" loading="lazy" decoding="async"><div class="card-content"><h3>${p.nome}</h3><p>${p.descricao||"Oferta selecionada pela Home Tech."}</p>${p.preco?`<div class="price-box"><div class="old-price">${p.precoAntigo?`De ${brl(p.precoAntigo)}`:""}</div><div class="current-price">${brl(p.preco)}</div><p class="installments">ou consulte parcelamento no Mercado Livre</p></div>`:""}<div class="card-actions"><a href="${p.link}" target="_blank" rel="noopener noreferrer" class="btn">Conferir oferta</a><button class="share-btn" data-share="${p.id}" aria-label="Compartilhar oferta">↗</button></div></div>`}
+    function criarCard(p){const card=document.createElement("article");card.className="card";card.innerHTML=cardHTML(p);return card}
+    function renderizarProdutos(){produtosContainer.innerHTML="";const inicio=(paginaAtual-1)*itensPorPagina,lista=produtosFiltrados.slice(inicio,inicio+itensPorPagina);if(!lista.length){produtosContainer.innerHTML='<div class="empty-state">Nenhum produto encontrado. Tente outro termo ou categoria.</div>';contador.textContent="Produtos encontrados: 0";paginacao.innerHTML="";return}lista.forEach(p=>produtosContainer.appendChild(criarCard(p)));contador.textContent=`Produtos encontrados: ${produtosFiltrados.length}`;renderizarPaginacao()}
+    function renderizarPaginacao(){paginacao.innerHTML="";const total=Math.ceil(produtosFiltrados.length/itensPorPagina);for(let i=1;i<=total;i++){const b=document.createElement("button");b.textContent=i;b.type="button";b.setAttribute("aria-label",`Ir para página ${i}`);if(i===paginaAtual){b.classList.add("active");b.setAttribute("aria-current","page")}b.onclick=()=>{paginaAtual=i;renderizarProdutos();document.getElementById("produtos").scrollIntoView({behavior:"smooth",block:"start"})};paginacao.appendChild(b)}}
+    function aplicarFiltros(){const termo=norm(buscaInput.value),cat=filtroCat.value;produtosFiltrados=todosProdutos.filter(p=>(norm(p.nome).includes(termo)||norm(p.descricao).includes(termo)||norm(p.categoria).includes(termo))&&(cat==="todas"||p.categoria===cat));const ord=ordenacao.value;if(ord==="menor")produtosFiltrados.sort((a,b)=>(a.preco||Infinity)-(b.preco||Infinity));if(ord==="maior")produtosFiltrados.sort((a,b)=>(b.preco||0)-(a.preco||0));if(ord==="desconto")produtosFiltrados.sort((a,b)=>desconto(b)-desconto(a));if(ord==="az")produtosFiltrados.sort((a,b)=>a.nome.localeCompare(b.nome,"pt-BR"));paginaAtual=1;renderizarProdutos()}
+    const cats=[['todas','✨ Todas'],['smartphones','📱 Celulares'],['notebooks','💻 Notebooks'],['games','🎮 Games'],['tv','📺 TVs'],['perifericos','⌨️ Periféricos'],['casa','🏠 Casa'],['eletro','⚡ Eletro'],['moda','👟 Moda'],['perfume','✨ Perfumes']];
+    function renderQuickCats(){const q=$("quickCats");q.innerHTML="";cats.forEach(([v,n])=>{const b=document.createElement("button");b.className="cat-chip"+(filtroCat.value===v?" active":"");b.textContent=n;b.onclick=()=>{filtroCat.value=v;renderQuickCats();aplicarFiltros();document.querySelector('.filters-wrap').scrollIntoView({behavior:'smooth'})};q.appendChild(b)})}
+    function renderFeatured(){const box=$("featured");box.innerHTML="";let list=todosProdutos.filter(p=>p.destaque).slice(0,8);if(!list.length)list=todosProdutos.slice(0,6);list.forEach(p=>box.appendChild(criarCard(p)))}
+    function toggleFav(id){favoritos.has(id)?favoritos.delete(id):favoritos.add(id);localStorage.setItem(STORAGE_FAV,JSON.stringify([...favoritos]));renderizarProdutos();renderFeatured()}
+    async function shareProduct(id){const p=todosProdutos.find(x=>x.id===id);if(!p)return;const txt=`🔥 ${p.nome}${p.preco?`\n💰 ${brl(p.preco)}`:""}\n👉 ${p.link}`;try{if(navigator.share)await navigator.share({title:p.nome,text:txt,url:p.link});else{await navigator.clipboard.writeText(txt);toast("Oferta copiada para compartilhar!")}}catch(e){}}
+    document.addEventListener("click",e=>{const f=e.target.closest("[data-fav]");if(f)toggleFav(f.dataset.fav);const sh=e.target.closest("[data-share]");if(sh)shareProduct(sh.dataset.share)});
+    buscaInput.addEventListener("input",aplicarFiltros);filtroCat.addEventListener("change",()=>{renderQuickCats();aplicarFiltros()});ordenacao.addEventListener("change",aplicarFiltros);
+    const toggle=$("themeToggle"),temaSalvo=localStorage.getItem("tema");function aplicarTema(t){const esc=t==="escuro";document.body.classList.toggle("dark",esc);toggle.textContent=esc?"☀":"☾";toggle.setAttribute("aria-label",esc?"Ativar modo claro":"Ativar modo escuro");toggle.title=esc?"Ativar modo claro":"Ativar modo escuro"}aplicarTema(temaSalvo||"claro");toggle.onclick=()=>{const n=document.body.classList.contains("dark")?"claro":"escuro";localStorage.setItem("tema",n);aplicarTema(n)};
+    const btnTop=$("topBtn");window.addEventListener("scroll",()=>btnTop.style.display=(document.documentElement.scrollTop>200)?"block":"none");btnTop.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
+    // Admin local
+    const modal=$("adminModal"),form=$("productForm");let editId=null;function openAdmin(){modal.classList.add("open");modal.setAttribute("aria-hidden","false");renderAdminList()}function closeAdmin(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true")}$("adminBtn").onclick=openAdmin;$("closeAdmin").onclick=closeAdmin;modal.addEventListener("click",e=>{if(e.target===modal)closeAdmin()});
+    function num(v){return Number(String(v).replace(/\./g,"").replace(",","."))||0}function saveCustom(){localStorage.setItem(STORAGE_PRODUCTS,JSON.stringify(customProdutos));todosProdutos=[...customProdutos,...baseProdutos];aplicarFiltros();renderFeatured();renderAdminList()}
+    form.onsubmit=e=>{e.preventDefault();const obj={id:editId||`custom-${Date.now()}`,nome:$("pNome").value.trim(),categoria:$("pCategoria").value,precoAntigo:num($("pPrecoAntigo").value),preco:num($("pPreco").value),imagem:$("pImagem").value.trim(),link:$("pLink").value.trim(),descricao:$("pDescricao").value.trim(),destaque:$("pDestaque").checked};if(editId){customProdutos=customProdutos.map(p=>p.id===editId?obj:p);toast("Oferta atualizada!")}else{customProdutos.unshift(obj);toast("Oferta cadastrada!")}resetForm();saveCustom()};
+    function resetForm(){form.reset();editId=null;$("cancelEdit").hidden=true}$("cancelEdit").onclick=resetForm;
+    function renderAdminList(){const box=$("adminProducts");box.innerHTML=customProdutos.length?"":"<p style='color:var(--muted);margin-top:10px'>Nenhuma oferta adicionada pelo painel ainda.</p>";customProdutos.forEach(p=>{const d=document.createElement("div");d.className="admin-item";d.innerHTML=`<span><strong>${p.nome}</strong></span><div class="admin-item-actions"><button data-edit="${p.id}">Editar</button><button class="danger" data-del="${p.id}">Excluir</button></div>`;box.appendChild(d)});box.querySelectorAll("[data-edit]").forEach(b=>b.onclick=()=>editProduct(b.dataset.edit));box.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{if(confirm("Excluir esta oferta?")){customProdutos=customProdutos.filter(p=>p.id!==b.dataset.del);saveCustom();toast("Oferta excluída")}})}
+    function editProduct(id){const p=customProdutos.find(x=>x.id===id);if(!p)return;editId=id;$("pNome").value=p.nome;$("pCategoria").value=p.categoria;$("pPrecoAntigo").value=p.precoAntigo||"";$("pPreco").value=p.preco||"";$("pImagem").value=p.imagem;$("pLink").value=p.link;$("pDescricao").value=p.descricao||"";$("pDestaque").checked=!!p.destaque;$("cancelEdit").hidden=false;form.scrollIntoView({behavior:"smooth"})}
+    embaralhar(baseProdutos);todosProdutos=[...customProdutos,...baseProdutos];produtosFiltrados=[...todosProdutos];renderQuickCats();renderFeatured();aplicarFiltros();
 
-    const produtosContainer = document.getElementById("produtos");
-    const contador = document.getElementById("contador");
-    const paginacao = document.getElementById("paginacao");
-    const buscaInput = document.getElementById("busca");
-    const filtroCat = document.getElementById("categoria");
-
-    let produtosFiltrados = [];
-    let paginaAtual = 1;
-    const itensPorPagina = 6;
-
-    function renderizarProdutos() {
-      produtosContainer.innerHTML = "";
-      const inicio = (paginaAtual - 1) * itensPorPagina;
-      const fim = inicio + itensPorPagina;
-      const produtosPagina = produtosFiltrados.slice(inicio, fim);
-
-      if (produtosPagina.length === 0) {
-        produtosContainer.innerHTML = `<div class="empty-state">Nenhum produto encontrado. Tente outro termo ou categoria.</div>`;
-        contador.textContent = "Produtos encontrados: 0";
-        paginacao.innerHTML = "";
-        return;
-      }
-
-      produtosPagina.forEach(p => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-          <img src="${p.imagem}" alt="${p.nome}" loading="lazy" decoding="async">
-          <div class="card-content">
-            <h3>${p.nome}</h3>
-            <p>${p.descricao}</p>
-            <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="btn">Conferir oferta</a>
-          </div>
-        `;
-        produtosContainer.appendChild(card);
-      });
-
-      contador.textContent = `Produtos encontrados: ${produtosFiltrados.length}`;
-      renderizarPaginacao();
-    }
-
-    function renderizarPaginacao() {
-      paginacao.innerHTML = "";
-      const totalPaginas = Math.ceil(produtosFiltrados.length / itensPorPagina);
-      for (let i = 1; i <= totalPaginas; i++) {
-        const btn = document.createElement("button");
-        btn.textContent = i;
-        btn.type = "button";
-        btn.setAttribute("aria-label", `Ir para página ${i}`);
-        if (i === paginaAtual) {
-          btn.classList.add("active");
-          btn.setAttribute("aria-current", "page");
-        }
-        btn.onclick = () => {
-          paginaAtual = i;
-          renderizarProdutos();
-        };
-        paginacao.appendChild(btn);
-      }
-    }
-
-    function filtrarProdutos() {
-      const termo = buscaInput.value.toLowerCase();
-      const categoria = filtroCat.value;
-      produtosFiltrados = produtosData.filter(p => {
-        const matchBusca = p.nome.toLowerCase().includes(termo);
-        const matchCat = categoria === "todas" || p.categoria === categoria;
-        return matchBusca && matchCat;
-      });
-      paginaAtual = 1;
-      renderizarProdutos();
-    }
-
-    window.addEventListener("load", () => {
-      embaralhar(produtosData);
-      produtosFiltrados = produtosData;
-      renderizarProdutos();
-    });
-
-    buscaInput.addEventListener("input", filtrarProdutos);
-    filtroCat.addEventListener("change", filtrarProdutos);
-
-    // Tema escuro
-    const toggle = document.getElementById("themeToggle");
-    const temaSalvo = localStorage.getItem("tema");
-
-    function aplicarTema(tema) {
-      const escuro = tema === "escuro";
-      document.body.classList.toggle("dark", escuro);
-      toggle.textContent = escuro ? "☀" : "☾";
-      toggle.setAttribute("aria-label", escuro ? "Ativar modo claro" : "Ativar modo escuro");
-      toggle.title = escuro ? "Ativar modo claro" : "Ativar modo escuro";
-    }
-
-    aplicarTema(temaSalvo || "claro");
-
-    toggle.onclick = () => {
-      const novoTema = document.body.classList.contains("dark") ? "claro" : "escuro";
-      localStorage.setItem("tema", novoTema);
-      aplicarTema(novoTema);
-    };
-
-    // Botão voltar ao topo
-    const btnTop = document.getElementById("topBtn");
-    window.onscroll = function() {
-      btnTop.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
-    };
-    btnTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   </script>
 </body>
 </html>
